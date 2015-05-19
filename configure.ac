@@ -34,6 +34,10 @@ AM_CONDITIONAL(HAVE_RST2MAN, [test "x$RST2MAN" != "xno"])
 # Check for pkg-config
 PKG_PROG_PKG_CONFIG
 
+# On some OS-es (eg. Debian) the uuid.h is placed
+# in the /usr/include/ossp directory.
+CPPFLAGS="$CPPFLAGS -I/usr/include/ossp"
+
 # Checks for header files.
 AC_HEADER_STDC
 AC_CHECK_HEADERS([stdio.h])
